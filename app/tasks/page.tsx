@@ -66,13 +66,20 @@ export default function TasksPage() {
           className="space-y-4 w-full flex items-center flex-col "
         >
           {filteredTasks.map((task) => (
-            <Card key={task.id} className="p-6 w-[70%]">
-              <div className="flex items-start justify-between">
+            <Card key={task.id} className="p-6 w-[100%]">
+              <div className="flex md:flex-row flex-col gap-5 items-start justify-between">
                 <div className="space-y-2">
-                  <div className="flex items-center space-x-2">
-                    <h3 className="text-xl font-semibold">{task.title}</h3>
+                  <div className="flex justify-center items-center space-x-2">
+                    <h3 className="text-xl font-semibold flex-nowrap line-clamp-1">
+                      {task.title}
+                    </h3>
                     {task.type === "teacher" && (
-                      <Badge variant="secondary">{task.points} Points</Badge>
+                      <Badge
+                        variant="secondary"
+                        className="px-2 whitespace-nowrap"
+                      >
+                        {task.points} Points
+                      </Badge>
                     )}
                   </div>
                   <p className="text-muted-foreground">{task.description}</p>
@@ -110,15 +117,16 @@ export default function TasksPage() {
           value="teacher"
           className="space-y-4 w-full flex items-center flex-col "
         >
-          {/* Teacher assignments will be shown here */}
           {filteredTasks.map((task) => (
-            <Card key={task.id} className="p-6 w-[70%]">
-              <div className="flex items-start justify-between">
+            <Card key={task.id} className="p-6 w-[100%]">
+              <div className="flex md:flex-row flex-col gap-5 items-start justify-between">
                 <div className="space-y-2">
                   <div className="flex items-center space-x-2">
                     <h3 className="text-xl font-semibold">{task.title}</h3>
                     {task.type === "teacher" && (
-                      <Badge variant="secondary">{task.points} Points</Badge>
+                      <Badge variant="secondary" className="whitespace-nowrap">
+                        {task.points} Points
+                      </Badge>
                     )}
                   </div>
                   <p className="text-muted-foreground">{task.description}</p>
@@ -156,15 +164,16 @@ export default function TasksPage() {
           value="personal"
           className="space-y-4 w-full flex items-center flex-col "
         >
-          {/* Personal tasks will be shown here */}
           {filteredTasks.map((task) => (
-            <Card key={task.id} className="p-6 w-[70%]">
-              <div className="flex items-start justify-between">
+            <Card key={task.id} className="p-6 w-[100%]">
+              <div className="flex md:flex-row flex-col gap-5 items-start justify-between">
                 <div className="space-y-2">
                   <div className="flex items-center space-x-2">
                     <h3 className="text-xl font-semibold">{task.title}</h3>
                     {task.type === "teacher" && (
-                      <Badge variant="secondary">{task.points} Points</Badge>
+                      <Badge variant="secondary" className="whitespace-nowrap">
+                        {task.points} Points
+                      </Badge>
                     )}
                   </div>
                   <p className="text-muted-foreground">{task.description}</p>
