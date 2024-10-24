@@ -80,7 +80,7 @@ export default function AIBuddyPage() {
         ))}
       </div>
 
-      <div className="p-4 border-t sticky bottom-0 flex space-x-4">
+      <div className="p-4 border-t sticky bottom-0 flex bg-black space-x-4">
         <Input
           placeholder="Type your message..."
           value={newMessage}
