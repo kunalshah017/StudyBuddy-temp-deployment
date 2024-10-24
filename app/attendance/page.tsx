@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { Button } from '@/components/ui/button';
-import { Card } from '@/components/ui/card';
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
 import {
   Table,
   TableBody,
@@ -10,15 +10,15 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from '@/components/ui/table';
-import { Badge } from '@/components/ui/badge';
-import { Calendar } from '@/components/ui/calendar';
+} from "@/components/ui/table";
+import { Badge } from "@/components/ui/badge";
+import { Calendar } from "@/components/ui/calendar";
 
 const subjects = [
-  { id: 1, name: 'Mathematics', attended: 15, total: 18, required: 75 },
-  { id: 2, name: 'Physics', attended: 12, total: 15, required: 75 },
-  { id: 3, name: 'Computer Science', attended: 20, total: 22, required: 75 },
-  { id: 4, name: 'English', attended: 14, total: 16, required: 75 },
+  { id: 1, name: "Mathematics", attended: 15, total: 18, required: 75 },
+  { id: 2, name: "Physics", attended: 12, total: 15, required: 75 },
+  { id: 3, name: "Computer Science", attended: 20, total: 22, required: 75 },
+  { id: 4, name: "English", attended: 14, total: 16, required: 75 },
 ];
 
 export default function AttendancePage() {
@@ -53,7 +53,7 @@ export default function AttendancePage() {
               {subjects.map((subject) => {
                 const percentage = (subject.attended / subject.total) * 100;
                 const status =
-                  percentage >= subject.required ? 'success' : 'destructive';
+                  percentage >= subject.required ? "default" : "destructive";
                 return (
                   <TableRow key={subject.id}>
                     <TableCell className="font-medium">
@@ -64,7 +64,7 @@ export default function AttendancePage() {
                     <TableCell>{percentage.toFixed(1)}%</TableCell>
                     <TableCell>
                       <Badge variant={status}>
-                        {status === 'success' ? 'On Track' : 'At Risk'}
+                        {status === "default" ? "On Track" : "At Risk"}
                       </Badge>
                     </TableCell>
                   </TableRow>
