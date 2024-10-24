@@ -51,7 +51,7 @@ export default function AIBuddyPage() {
       const aiResponse = {
         id: messages.length + 2,
         sender: "AI",
-        text: "That's great! Let's solve it step by step.",
+        text: "The bot build is still in process, I'll be here to help you soon!",
       };
       setMessages((prevMessages) => [...prevMessages, aiResponse]);
     }, 1000);
